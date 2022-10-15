@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     
     var comNum = Int.random(in: 1...10)
-    var myNum : Int = 1
+   // var myNum : Int = 1
 
     
     
@@ -40,9 +40,9 @@ class ViewController: UIViewController {
         numberLable.text = numString
         
         // 2)선택한 숫자를 변수에 저장
-        guard let num = Int(numString) else {return}
-        myNum = num
-        
+        //guard let num = Int(numString) else {return}
+        // myNum = num
+    
         
     }
     
@@ -50,6 +50,8 @@ class ViewController: UIViewController {
 
     @IBAction func selectBtnTapped(_ sender: UIButton) {
         // 1)컴퓨터가 선택한 숫자와 내가 선택한 숫자 비교( up down bingo) ->mainLable
+        guard let myNumString = numberLable.text else {return}
+        guard let myNum = Int(myNumString) else {return}
         if comNum>myNum {
             mainLable.text = "UP!"
         }else if comNum<myNum{
